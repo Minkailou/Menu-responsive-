@@ -1,0 +1,43 @@
+/**************** Appliquons quelques styles de base pour nos éléments ********/
+.navigation{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #acacdc;
+}
+.navigation a{
+    display: block;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+    font-family: fantasy;
+    color: black;
+
+}
+/**** Propriété relative à flexbox 
+ * 1. On définit un context flexbox sur le parent.
+ * 2. On définit le sens de gauche à droite
+ *==  flexbox-direction:row et flex-wrap:wrap
+ * 3. On aligne les éléments à droite.
+ * 4. Sur ecran moyens, on centre les éléments.
+ * 5. Sur petits écrans, on redéfinit le sens de haut en bas
+ *==  flex-direction: colum et flex-wrap:wrap
+***********/
+/* Grand écrans */
+.navigation {
+    display: flex;             /* 1 */
+    flex-flow: row wrap;       /* 2 */
+    justify-content: flex-end; /* 3 */
+}
+/** Ecran moyens **/
+@media (max-width: 800px){
+    .navigation{
+        justify-content: center; /* 4 */
+    }
+}
+/** Petits ecran **/
+@media(max-width: 450){
+    .navigation{
+        flex-flow: column; /* 5 */
+    }
+}
